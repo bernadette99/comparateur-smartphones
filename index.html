@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard d'Analyse Smartphones</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <h1>Dashboard d'Analyse Smartphones 🤖</h1>
+        <p>Une vue d'ensemble propulsée par l'IA et les avis utilisateurs</p>
+    </header>
+
+    <main id="dashboard-container">
+        
+        <section class="intro-section">
+            <div class="info-card" id="about-card">
+                <h3>À Propos de ce Dashboard</h3>
+                    <p>Ce tableau de bord interactif a pour but de simplifier le choix d'un smartphone. Il synthétise des avis utilisateurs en utilisant un <strong>modèle d'Intelligence Artificielle (Machine Learning)</strong> pour analyser le sentiment réel derrière chaque commentaire.</p>
+
+                    <h4>Avantages</h4>
+                    <ul>
+                        <li>✅ <strong>Analyse Sémantique Avancée :</strong> Le modèle ne se contente pas de compter les mots, il comprend leur sens et le contexte global de la phrase pour une analyse plus fine et humaine.</li>
+                        <li>✅ <strong>Synthèse rapide :</strong> Comprenez les forces et faiblesses d'un produit en un clin d'œil.</li>
+                        <li>✅ <strong>Visuel et Intuitif :</strong> Des graphiques clairs valent mieux que de longs discours.</li>
+                    </ul>
+
+                    <h4>Limites</h4>
+                    <ul>
+                        <li>⚠️ <strong>Taille de l'échantillon :</strong> Cette démo est basée sur un jeu de données limité (90 avis). Un modèle entraîné sur des milliers de textes serait encore plus performant.</li>
+                        <li>⚠️ <strong>Nuances complexes :</strong> Bien que plus performant, le modèle peut encore avoir des difficultés avec les formes de langage très subtiles comme le sarcasme ou l'ironie.</li>
+                        <li>⚠️ <strong>Généralisation :</strong> Le modèle est performant sur ces données mais devrait être ré-entraîné pour analyser des avis sur d'autres types de produits.</li>
+                    </ul>
+            </ul>
+            </div>
+            <div class="info-card" id="stats-card">
+                <h3>Statistiques des Données</h3>
+                <p><strong>Source :</strong> <a href="https://www.kaggle.com/datasets/adithuse/smartphone-feature-optimization-dataset" target="_blank">Kaggle Dataset</a></p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-value" id="total-reviews">--</span>
+                        <span class="stat-label">Avis analysés</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="apple-reviews">--</span>
+                        <span class="stat-label">Avis Apple</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="samsung-reviews">--</span>
+                        <span class="stat-label">Avis Samsung</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-value" id="google-reviews">--</span>
+                        <span class="stat-label">Avis Google</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="global-charts-section">
+            <h2>Analyses Globales</h2>
+            <div class="charts-grid">
+                <div class="chart-container"><img src="images/average_rating_by_brand.png" alt="Note moyenne par marque"></div>
+                <div class="chart-container"><img src="images/average_rating_by_model.png" alt="Note moyenne par modèle"></div>
+                <div class="chart-container"><img src="images/sentiment_distribution_by_rating.png" alt="Distribution des sentiments par note"></div>
+                <div class="chart-container"><img src="images/price_vs_rating_scatter.png" alt="Prix vs Note"></div>
+            </div>
+        </section>
+
+        <h2 class="section-title">Analyse Détaillée par Modèle (via IA)</h2>
+        <nav id="phone-selector"></nav>
+
+        <div id="phone-card">
+            </div>
+
+    </main>
+
+    <footer>
+    <div class="footer-content">
+        <p>Conçu et développé par <strong>BABAGNAK Bernadette Falonne</strong> | Master en Intelligence Artificielle & Data Science</p>
+
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/bernadette-falonne-babagnak-884b6622a/" target="_blank">LinkedIn</a>
+            <a href="https://www.instagram.com/bernie_f_?igsh=OG10d3ZrOGFpcGF0" target="_blank">Instagram</a>
+        </div>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
