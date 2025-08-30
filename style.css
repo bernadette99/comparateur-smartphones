@@ -1,0 +1,192 @@
+:root {
+    --primary-color: #007bff;
+    --positive-color: #28a745;
+    --negative-color: #dc3545;
+    --neutral-color: #6c757d;
+    --light-bg: #f8f9fa;
+    --card-bg: #ffffff;
+    --text-color: #343a40;
+    --border-color: #dee2e6;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+    margin: 0;
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(90deg, var(--primary-color), #0056b3);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem;
+    border-bottom: 5px solid #0056b3;
+}
+
+h1, h2, h3 { font-weight: 600; }
+.section-title { text-align: center; margin: 3rem 0 1rem 0; color: var(--primary-color); }
+
+main {
+    padding: 1rem;
+    max-width: 1400px;
+    margin: auto;
+}
+
+/* Section Intro & Stats */
+.intro-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+.info-card {
+    background: var(--card-bg);
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+.info-card h3 { margin-top: 0; }
+.info-card ul { padding-left: 20px; }
+.info-card li { margin-bottom: 0.5rem; }
+.info-card a { color: var(--primary-color); text-decoration: none; font-weight: 600; }
+.stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    text-align: center;
+    margin-top: 1rem;
+}
+.stat-item .stat-value { font-size: 2rem; font-weight: 700; color: var(--primary-color); }
+.stat-item .stat-label { font-size: 0.9rem; color: var(--neutral-color); }
+
+/* Section Graphiques Globaux */
+.global-charts-section { margin-bottom: 2rem; }
+.charts-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+.chart-container {
+    background: var(--card-bg);
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+.chart-container img { max-width: 100%; height: auto; border-radius: 8px; }
+
+/* Sélecteur */
+nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 1rem;
+    background-color: var(--card-bg);
+    box-shadow: var(--shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-radius: 50px;
+    margin: 2rem auto;
+    max-width: 90%;
+}
+nav button {
+    background-color: transparent;
+    border: 2px solid var(--border-color);
+    color: var(--neutral-color);
+    padding: 0.6rem 1.2rem; margin: 0.5rem; border-radius: 50px;
+    font-size: 0.9rem; font-weight: 600; cursor: pointer; transition: all 0.3s ease;
+}
+nav button:hover { background-color: var(--primary-color); border-color: var(--primary-color); color: white; transform: translateY(-2px); }
+nav button.active { background-color: var(--primary-color); border-color: var(--primary-color); color: white; box-shadow: 0 2px 8px rgba(0, 123, 255, 0.4); }
+
+/* Dashboard par téléphone */
+#phone-card {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 2rem;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s, transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+#phone-card.visible { opacity: 1; transform: translateY(0); }
+
+
+.main-scores { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem; }
+.score-card { background: var(--light-bg); border-radius: 8px; padding: 1.5rem; text-align: center; }
+.note-globale .score-value { font-size: 3rem; font-weight: 700; color: var(--primary-color); }
+.note-globale .score-stars { font-size: 1.5rem; color: #ffc107; }
+.sentiment-dist .bar-container { background-color: var(--border-color); border-radius: 20px; height: 12px; overflow: hidden; flex-grow: 1; margin: 0 10px; }
+.sentiment-dist .bar { height: 100%; border-radius: 20px; transition: width 0.8s ease-out; }
+.sentiment-dist .bar.positive { background-color: var(--positive-color); }
+.sentiment-dist .bar.negative { background-color: var(--negative-color); }
+.sentiment-dist .bar.neutral { background-color: var(--neutral-color); }
+.sentiment-bars { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 5px; margin-bottom: 10px; }
+.bar-label { font-size: 0.9rem; font-weight: 600; }
+.bar-value { font-size: 0.9rem; font-weight: 600; }
+.specs-section { margin-bottom: 2rem; }
+.specs-section h3, .analysis-grid h3 { text-align: center; margin-bottom: 1.5rem; }
+.specs-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; }
+.spec-item { display: flex; align-items: center; background: var(--light-bg); padding: 1rem; border-radius: 8px; }
+.spec-icon { font-size: 2rem; margin-right: 1rem; }
+.spec-details { display: flex; flex-direction: column; }
+.spec-title { font-size: 0.9rem; color: var(--neutral-color); }
+.spec-value { font-size: 1.1rem; font-weight: 600; }
+.analysis-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; }
+.analysis-card { background: var(--light-bg); border-radius: 8px; padding: 1.5rem; text-align: center; }
+.analysis-card img { max-width: 100%; height: auto; border-radius: 8px; margin-top: 1rem; border: 1px solid var(--border-color); }
+
+footer { text-align: center; padding: 2rem; margin-top: 2rem; color: #aaa; font-size: 0.9rem; }
+
+
+/* Styles pour les icônes des spécifications */
+.spec-icon {
+    width: 40px;
+    height: 40px;
+    margin-right: 1rem;
+    object-fit: contain;
+}
+
+
+.brand-logo-container img {
+    max-height: 30px; /* Réduit la hauteur maximale du logo */
+    width: auto;      /* Assure que la largeur s'ajuste pour garder les proportions */
+    float: right;      /* Aligne le logo à droite */
+   
+    position: absolute;
+    top: 30px;
+    right: 20px;
+}
+
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+    background-color: #343a40; /* Un fond plus foncé pour bien finir la page */
+    color: #f8f9fa;
+}
+
+.footer-content p {
+    margin: 0 0 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.social-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #007bff; /* La couleur primaire du site au survol */
+    text-decoration: underline;
+}
+
+@media (max-width: 1200px) { .charts-grid { grid-template-columns: 1fr; } }
+@media (max-width: 768px) { .intro-section { grid-template-columns: 1fr; } .analysis-grid { grid-template-columns: 1fr; } }
